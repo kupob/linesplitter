@@ -53,17 +53,17 @@ void splitLines(const BufferPtr& buffer, const BufferPtr& bufferErrors, std::vec
         file.seekg(0);
         while (std::getline(file, line)) {
             if (auto pos = line.find("::", 0); pos != std::string::npos) {
-                *buffer << line.substr(pos + 1);
                 if (bufferErrors)
-                    *bufferErrors << line;
+                    *bufferErrors << line + '\n';
+                *buffer << line.substr(pos + 1) + '\n';
             }
             else if (pos = line.find(':', 0); pos != std::string::npos) {
-                *buffer << line.substr(pos + 1);
+                *buffer << line.substr(pos + 1) + '\n';
             }
             else if (pos = line.find(';', 0); pos != std::string::npos) {
-                *buffer << line.substr(pos + 1);
                 if (bufferErrors)
-                    *bufferErrors << line;
+                    *bufferErrors << line + '\n';
+                *buffer << line.substr(pos + 1) + '\n';
             }
         }
     }
