@@ -55,7 +55,7 @@ void splitLines(const BufferPtr& buffer, const BufferPtr& bufferErrors, std::vec
             if (auto pos = line.find("::", 0); pos != std::string::npos) {
                 *buffer << line.substr(pos + 1);
                 if (bufferErrors)
-                    *bufferErrors << line.substr(pos);
+                    *bufferErrors << line;
             }
             else if (pos = line.find(':', 0); pos != std::string::npos) {
                 *buffer << line.substr(pos + 1);
@@ -63,7 +63,7 @@ void splitLines(const BufferPtr& buffer, const BufferPtr& bufferErrors, std::vec
             else if (pos = line.find(';', 0); pos != std::string::npos) {
                 *buffer << line.substr(pos + 1);
                 if (bufferErrors)
-                    *bufferErrors << line.substr(pos);
+                    *bufferErrors << line;
             }
         }
     }
