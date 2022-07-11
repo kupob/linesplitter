@@ -9,9 +9,9 @@
 constexpr auto str_no_input =       "No input file provided\n";
 constexpr auto str_no_output =      "No output file provided\n";
 constexpr auto str_usage =          "Usage:\n"
-                                    "    wordlist -i <inputfile> -o <outputfile> -r <rulesfile>\n"
+                                    "    linesplitter -i <inputfile> -o <outputfile> -r <rulesfile>\n"
                                     "Examples:\n"
-                                    "    wordlist -i test.txt -o test_result.txt -r rules.txt";
+                                    "    linesplitter -i test.txt -o test_result.txt -r rules.txt";
 constexpr auto std_error_file_r =   "Error:\n"
                                     "    Could not read file";
 constexpr auto std_error_file_w =   "Error:\n"
